@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+    <title>CV Reviewer - {{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/nav_bar_logged_in.css">
+    <link rel="stylesheet" href="/static/css/upload_cv.css">
+    <link rel="stylesheet" href="/static/css/info_flash.css">
+</head>
+<body>
+    {% include "nav_bar_logged_in.html" %}
+
+    <div class="upload-container">
+        <div class="white-box">
+            <form class="dashed-box" method="POST" action="" enctype="multipart/form-data">
+                <img class="upl-file-ico" src="/static/images/upload-file.svg" alt="">
+                <p class="drag-drop-text" id="drag-drop-text">DRAG YOUR FILES OR CLICK HERE</p>
+                <button class="arrow-button" type="submit" value="Submit"><img class="next-arrow" src="/static/images/next-arrow-white.svg"></button>
+                <input class="input-file" id="input-file" type="file" name="file" accept=".doc, .docx, .pdf" required>
+            </form>
+            <p class="max-f-size">Max file size: 4 MB</p>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {% include "info_flash.html" %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <script src="/static/upload.js"></script>
+</body>
+</html>

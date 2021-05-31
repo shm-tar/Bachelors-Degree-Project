@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+    <title>CV Reviewer - {{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/nav_bar_logged_in.css">
+    <link rel="stylesheet" href="/static/css/new_post.css">
+</head>
+<body>
+    {% include "nav_bar_logged_in.html" %}
+
+    <img class="right-gif" src="/static/images/gifs/squid2.gif">
+
+    <div class="user-info-head">
+        <h2>Create a new post</h2>
+        <p>& publish your anonymized CV.</p>
+    </div>
+
+    <form class="pdf-container" action="" method="POST">
+        <div class="input-entry" id="silly-input-entry">
+            <label class="silly-uname-label" for="silly-uname">Your silly username:</label>
+            <input class="silly-uname" name="silly-uname" value="{{ silly_uname }}" required/>
+        </div>
+        
+        <div class="input-entry">
+            <label class="pdf-text-label" for="pdf-text">Here’s how it will look (based on your uploaded CV):</label>
+            <textarea type="text" name="pdf-text" class="pdf-text" rows="20" cols="70" required>{{extracted_text}}</textarea>
+        </div>
+
+        <div class="buttons-module">
+            <button class="post-btn" type="submit">Post my anonymized CV</button>
+        </div>
+    </form>
+</body>

@@ -1,0 +1,142 @@
+.loading-container {
+    margin: auto;
+    position: absolute;
+    top:0; bottom:0; /* Aligns Vertically - Remove for Horizontal Only */
+    left:0; right:0;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    width: 511px;
+    height: 292px;
+}
+
+.big-wait {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    position: static;
+    width: 511px;
+    height: 64px;
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-bottom: 40px;
+}
+
+.big-wait img {
+    position: static;
+    width: 40px;
+    height: 40px;
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.big-wait p {
+    position: static;
+    width: 427px;
+    height: 64px;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 64px;
+    
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.small-waits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    width: 312px;
+    height: 188px;
+    
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.small-wait-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    width: 312px;
+    height: 32px;
+    
+    flex: none;
+    flex-grow: 0;
+    margin-bottom: 20px;
+}
+
+.small-wait-entry img {
+    position: static;
+    width: 16px;
+    height: 16px;
+    top: 8px;
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 20px;
+}
+
+.small-wait-entry p {
+    position: static;
+    width: 276px;
+    height: 32px;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Sand clock animation */
+
+#sand-clock {
+    -webkit-animation: rotation 1.5s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(180deg);
+    }
+}

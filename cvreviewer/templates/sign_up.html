@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% if title %}
+    <title>CV Reviewer - {{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/nav_bar_simple.css">
+    <link rel="stylesheet" href="/static/css/sign_up.css">
+    <link rel="stylesheet" href="/static/css/error_flash.css">
+    <link rel="stylesheet" href="/static/css/success_flash.css">
+</head>
+
+<body>
+    {% include "nav_bar_simple.html" %}
+
+    <form class="sign-up-container" action="" method="POST">
+        <div class="head-module">
+            <p class="welcome">Whoa! A newcomer!</p>
+            <p class="head-desc">Join CV Reviewer</p>
+        </div>
+        <div class="input-module">
+            <p class="input-entry">
+                <label class="email-label" for="email">Your E-Mail</label>
+                <input type="email" name="email" class="email" placeholder="e.g.: elonmusk@mars.com" required maxlength="50">
+            </p>
+            <p class="input-entry">
+                <label class="passw-label" for="passw">Password</label>
+                <input type="password" id="passw" name="passw" class="passw" placeholder="e.g.: XÆA-1234" required minlength="8">
+            </p>
+            <p class="input-entry">
+                <label class="repeat-passw-label" for="repeat-passw">Repeat Password</label>
+                <input type="password" id="repeat-passw" name="repeat-passw" class="passw" required minlength="8">
+            </p>
+        </div>
+        <div class="buttons-module">
+            <button class="log-in-btn" type="submit">Sign up</button>
+            <div class="register">
+                <p>Already a member?</p>
+                <a href="{{ url_for('users.login') }}">Log in →</a>
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    {% include "error_flash.html" %}
+                {% elif category == 'success' %}
+                    {% include "success_flash.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <script src="/static/sign_up.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/flash_disappear.js"></script>
+</body>
+
+</html>

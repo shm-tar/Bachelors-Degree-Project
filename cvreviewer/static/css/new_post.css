@@ -1,0 +1,152 @@
+.right-gif {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: calc(50% - 250px/2 + 425px);
+    top: 152px;
+}
+
+.user-info-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    position: absolute;
+    width: 341px;
+    height: 81px;
+    left: calc(50% - 341px/2 - 379.5px);
+    top: 172px;
+}
+
+.user-info-head h2 {
+    height: 36px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 36px;
+    color: #FFFFFF;
+
+    order: 0;
+    margin-bottom: 10px;
+}
+
+.user-info-head p {
+    height: 36px;
+    font-weight: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+    color: #FFFFFF;
+
+    order: 1;
+}
+/*
+.silly-uname {
+    position: absolute;
+    left: calc(50% - 461px/2 - 319.5px);
+    top: 303px;
+    
+    height: 36px;
+    font-weight: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+*/
+
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    width: 685px;
+    height: 495px;
+    left: calc(50% - 685px/2 - 207.5px);
+    top: 265px;
+}
+
+#silly-input-entry {
+    width: 418px;
+    height: 94px;
+
+    order: 0;
+    margin-bottom: 16px;
+}
+
+#silly-input-entry input {
+    width: 418px;
+    height: 52px;
+
+    padding: 20px 20px;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    background: none;
+}
+
+#silly-input-entry label {
+    width: 227px;
+    height: 32px;
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 35px;
+    
+    
+    color: #FFFFFF;
+}
+
+.input-entry {
+    width: 685px;
+    height: 315px;
+
+    order: 1;
+    margin-bottom: 16px;
+}
+
+.input-entry label {
+    width: 410px;
+    height: 68px;
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    
+    
+    color: #FFFFFF;
+}
+
+.input-entry textarea {
+    width: 685px;
+    height: 278px;
+
+    padding: 20px 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    background: none;
+    color: #FFFFFF;
+    resize: none;
+    scrollbar-color: light;
+}
+
+.buttons-module {
+    order: 1;
+}
+
+.buttons-module button {
+    width: 245px;
+    height: 52px;
+    
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+}

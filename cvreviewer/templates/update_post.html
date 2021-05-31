@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+    <title>CV Reviewer - {{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/nav_bar_logged_in.css">
+    <link rel="stylesheet" href="/static/css/new_post.css">
+</head>
+<body>
+    {% include "nav_bar_logged_in.html" %}
+
+    <img class="right-gif" src="/static/images/gifs/patrick.gif">
+
+    <div class="user-info-head">
+        <h2>Update your post</h2>
+        <p>& save changes.</p>
+    </div>
+
+    <form class="pdf-container" action="" method="POST">
+        <div class="input-entry" id="silly-input-entry">
+            <label class="silly-uname-label" for="silly-uname">Your post title (silly username):</label>
+            <input class="silly-uname" name="silly-uname" value="{{ post.title }}" required/>
+        </div>
+        
+        <div class="input-entry">
+            <label class="pdf-text-label" for="pdf-text">Your post content (based on your uploaded CV):</label>
+            <textarea type="text" name="pdf-text" class="pdf-text" rows="20" cols="70" required>{{post.content}}</textarea>
+        </div>
+
+        <div class="buttons-module">
+            <button class="post-btn" type="submit">Update</button>
+        </div>
+    </form>
+</body>

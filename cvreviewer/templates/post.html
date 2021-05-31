@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+    <title>CV Reviewer - {{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/nav_bar_logged_in.css">
+    <link rel="stylesheet" href="/static/css/post.css">
+    <link rel="stylesheet" href="/static/css/success_flash.css">
+</head>
+<body>
+    {% include "nav_bar_logged_in.html" %}
+
+    <div class="cv-post-container">
+        <p class="date-posted">{{ post.date_processed.strftime('%m/%d/%Y, %H:%M') }}</p>
+        <hr class="delimiter">
+        <div class="title-and-content">
+            <h2 class="title">{{ post.title }}</h2>
+            <div class="content">{{ post.entity_content|safe }}</div>
+        </div>
+    </div>
+
+    {% if post.user_id == current_user.id %}
+        <div class="update-delete">
+            <a class="update-btn" href="{{ url_for('posts.update_specific_post', post_id=post.id) }}">Update</a>
+            <a class="delete-btn" type="button" onclick="document.getElementById('back-blur').style.display='block'">Delete</a>
+        </div>
+    {% elif connections_sender.are_connected == false %}
+        <a class="contact-btn" onclick="document.getElementById('back-blur-conn').style.display='block'">Sent!</a>
+    {% elif connections_sender.are_connected == true or connections_reciever.are_connected == true %}
+        <a href="mailto:{{user_connected.email}}" class="user-connected-email">{{user_connected.email}}</a>
+        <a href="{{ pdf_file }}" target="_blank" class="user-connected-email" style="left:calc(50% - 343px/2 + 379.5px);top:127px;width:343px;">Original Uploaded CV -></a>
+        <a class="connected-btn" onclick="document.getElementById('back-blur-conn').style.display='block'">Connected</a>
+    {% else %}
+        <a class="contact-btn" href="{{ url_for('users.users_connect') }}">Connect</a>
+    {% endif %}
+    
+    <div class="back-blur" id="back-blur">
+        <div class="blur">
+            <div class="delete-modal">
+                <div class="title-desc-modal">
+                    <h2 class="title-modal">Delete the post</h2>
+                    <p class="desc-modal">Are you sure you want to continue? This cannot be undone.</p>
+                </div>
+                <div class="buttons-modal">
+                    <button class="cancel-btn-modal" type="button" onclick="document.getElementById('back-blur').style.display='none'">Cancel</button>
+                    <form action="{{ url_for('posts.delete_specific_post', post_id=post.id)}}" method="POST">
+                        <button class="delete-btn-modal" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-blur" id="back-blur-conn">
+        <div class="blur">
+            <div class="delete-modal">
+                <div class="title-desc-modal">
+                    <h2 class="title-modal">Remove connection?</h2>
+                    <p class="desc-modal">Are you sure you want to remove it? This cannot be undone.</p>
+                </div>
+                <div class="buttons-modal">
+                    <button class="cancel-btn-modal" type="button" onclick="document.getElementById('back-blur-conn').style.display='none'">Cancel</button>
+                    <form action="{{ url_for('users.users_disconnect') }}" method="POST">
+                        <button class="delete-btn-modal" type="submit">Remove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {% include "success_flash.html" %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/flash_disappear.js"></script>
+</body>

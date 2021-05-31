@@ -1,0 +1,48 @@
+.exists-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    width: 569px;
+    height: 136px;
+    left: calc(50% - 569px/2 - 0.5px);
+    top: calc(50% - 136px/2);
+}
+
+.exists-title {
+    position: static;
+    width: 569px;
+    height: 64px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 64px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    order: 0;
+    margin-bottom: 40px;
+}
+
+.exists-link {
+    position: static;
+    width: 422px;
+    height: 32px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 64px;
+
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    order: 1;
+}

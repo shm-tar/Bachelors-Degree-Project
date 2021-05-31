@@ -1,0 +1,287 @@
+.nav-container {
+    position: absolute;
+    width: 1440px;
+    height: 72px;
+    left: calc(50% - 1440px/2);
+    top: 0px;
+}
+
+.main-logo {
+    position: absolute;
+    width: 185px;
+    height: 28px;
+    left: calc(50% - 185px/2 - 0.5px);
+    top: 22px;
+}
+
+.sign-up-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 40px;
+    
+    width: 404px;
+    height: 558px;
+    
+    position: absolute;
+    margin: auto;
+    top:0; bottom:0;
+    left:0; right:0;
+    max-width: 100%;
+    max-height: 100%;
+    
+    background: #FFFFFF;
+    /* Grey / T4 */
+    
+    border: 2px solid #ECECEC;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 40px 15px rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+}
+
+/* Titles */
+.head-module {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    position: static;
+    width: 324px;
+    height: 56px;
+    
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 40px;
+}
+
+.head-module .welcome {
+    position: static;
+    width: 152px;
+    height: 20px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: rgba(0, 0, 0, 0.5);
+    
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-bottom: 4px;
+}
+
+.head-module .head-desc {
+    position: static;
+    width: 198px;
+    height: 32px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+    
+    
+    color: #000000;
+    
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Input fields */
+.input-module {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    position: static;
+    width: 324px;
+    height: 240px;
+    
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 40px;
+}
+
+.input-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    width: 324px;
+    height: 64px;
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 24px;
+}
+
+.input-entry label {
+    height: 16px;
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    
+    
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.input-entry input {
+    width: 324px;
+    height: 40px;
+    /* Inside Auto Layout */
+    
+    padding: 20px 20px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+
+/* Log in button & First time here */
+.buttons-module {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    position: static;
+    width: 324px;
+    height: 80px;
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.log-in-btn {
+    position: static;
+    width: 324px;
+    height: 48px;
+
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 0;
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 16px;
+
+    background: #000000;
+    border-radius: 8px;
+
+    border: none;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+    
+    color: #FFFFFF;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    position: static;
+    width: 218px;
+    height: 22px;
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.register p {
+    width: 145px;
+    height: 16px;
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    
+    display: flex;
+    align-items: center;
+    
+    color: rgba(0, 0, 0, 0.5);
+    
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 8px;
+}
+
+.register a {
+    width: 65px;
+    height: 16px;
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+    
+    
+    /* Inside Auto Layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}

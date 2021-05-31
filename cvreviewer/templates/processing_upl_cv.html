@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/processing_upl_cv.css">
+</head>
+<body>
+    <div class="loading-container">
+        <div class="big-wait">
+            <img id="sand-clock" class="sand-clock" src="/static/images/sand-clock-alt.svg" alt="">
+            <p class="big-wait-desc">Uploading your CV</p>
+        </div>
+        
+        <div class="small-waits">
+            <div class="small-wait-entry">
+                <img class="bullet" src="/static/images/bullet.svg" alt="">
+                <p class="small-wait-desc">Messaging leprechauns</p>
+            </div>
+            
+            <div class="small-wait-entry">
+                <img class="bullet" src="/static/images/bullet.svg" alt="">
+                <p class="small-wait-desc">Doing some magic</p>
+            </div>
+            
+            <div class="small-wait-entry">
+                <img class="bullet" src="/static/images/bullet.svg" alt="">
+                <p class="small-wait-desc">Gathering info</p>
+            </div>
+            
+            <div class="small-wait-entry">
+                <img class="bullet" src="/static/images/bullet.svg" alt="">
+                <p class="small-wait-desc">Cleaning up</p>
+            </div>
+        </div>
+    </div>
+    <meta http-equiv="Refresh" content="5; url={{ url_for('users.account') }}">
+</body>
+</html>

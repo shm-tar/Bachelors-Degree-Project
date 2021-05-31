@@ -1,0 +1,359 @@
+body {
+    overflow-y: hidden;
+}
+
+.cv-post-container {
+    position: absolute;
+    width: 870px;
+    height: calc(100% - 185px);
+    left: calc(50% - 870px/2 + 115px);
+    top: 172px;
+    
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+
+.date-posted {
+    position: absolute;
+    width: 628px;
+    height: 20px;
+    left: 20px;
+    top: 20px;
+
+    color: rgba(0, 0, 0, 0.25);
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.delimiter {
+    position: absolute;
+    width: 830px;
+
+    left: 20px;
+    top: 45px;
+
+    margin: 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.title-and-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    width: 830px;
+    height: calc(100% - 70px);
+    left: 20px;
+    top: 55px;   
+}
+
+.title {
+    position: static;
+    width: 830px;
+    height: 32px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    
+    color: #000000;
+    
+    order: 0;
+    align-items: center;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.content {
+    position: static;
+    width: 830px;
+    height: calc(100% - 50px);
+
+    /* Make div scrollable when content exceeds div's size */
+    overflow-y: auto;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+
+    white-space: pre-wrap;
+
+    color: #000000;
+
+    order: 1;
+}
+
+.update-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    position: absolute;
+    width: 196px;
+    height: 144px;
+    left: calc(50% - 196px/2 - 452px);
+    top: 172px;
+}
+
+.update-btn {
+    cursor: pointer;
+    position: static;
+    width: 196px;
+    height: 62px;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+    
+    order: 0;
+
+    margin-bottom: 20px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    padding-top: 16px;
+
+    color: #000000;
+}
+
+.delete-btn {
+    cursor: pointer;
+    position: static;
+    width: 196px;
+    height: 62px;
+
+    background: #FF0000;
+    border-radius: 16px;
+    border: none;
+
+    order: 1;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+
+    padding: 16px;
+
+    color: #FFFFFF;
+}
+
+.contact-btn {
+    position: absolute;
+    width: 196px;
+    height: 62px;
+
+    left: calc(50% - 196px/2 - 452px);
+    top: 172px;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    padding-top: 16px;
+
+    color: #000000;
+}
+
+.connected-btn {
+    cursor: pointer;
+    position: absolute;
+    width: 196px;
+    height: 62px;
+
+    left: calc(50% - 196px/2 - 452px);
+    top: 172px;
+
+    background: none;
+    border: 2px solid #FFFFFF;;
+    border-radius: 16px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    padding-top: 14px;
+
+    color: #FFFFFF;
+}
+
+/* Delete Modal */
+.back-blur{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.blur {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+.delete-modal {
+    display: block;
+    position: fixed;
+    margin: auto;
+    top: 130px;
+    left: calc(50% - 544px/2);
+
+    width: 544px;
+    height: 172px;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+
+    padding: 20px 20px;
+}
+
+.title-desc-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 366px;
+    height: 90px;
+}
+
+.title-modal {
+    position: static;
+    width: 504px;
+    height: 32px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #000000;
+
+    order: 0;
+
+    margin-bottom: 10px;
+}
+
+.desc-modal {
+    position: static;
+    width: 504px;
+    height: 48px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #000000;
+
+    order: 1;
+}
+
+.buttons-modal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    position: absolute;
+    width: 210px;
+    height: 40px;
+
+    right: 20px;
+    bottom: 20px;
+}
+
+.cancel-btn-modal {
+    cursor: pointer;
+    position: static;
+    width: 100px;
+    height: 40px;
+
+    background: #000000;
+    border-radius: 8px;
+    border: none;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #FFFFFF;
+
+    order: 0;
+
+    padding: 10px;
+
+    margin-right: 10px;
+}
+
+.delete-btn-modal {
+    cursor: pointer;
+    position: static;
+    width: 100px;
+    height: 40px;
+
+    background: #FF0000;
+    border-radius: 8px;
+    border: none;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #FFFFFF;
+
+    padding: 10px;
+
+    order: 1;
+}
+
+.user-connected-email {
+    position: absolute;
+    width: 644px;
+    height: 30px;
+    left: calc(50% - 644px/2 + 229px);
+    top: 82px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: right;
+    
+    color: #FFFFFF;
+}

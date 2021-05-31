@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+    <title>CV Reviewer - {{ title }}</title>
+    {% else %}
+    <title>CV Reviewer</title>
+    {% endif %}
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+    {% if current_user.is_authenticated %}
+        <link rel="stylesheet" href="/static/css/nav_bar_logged_in.css">
+    {% else %}
+        <link rel="stylesheet" href="/static/css/nav_bar.css">
+    {% endif %}
+    
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/info_flash.css">
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        {% include "nav_bar_logged_in.html" %}
+    {% else %}
+        {% include "nav_bar.html" %}
+    {% endif %}
+
+    <div class="header-container">
+        <div class="wrapper">
+            <header>
+                <div class="hero-content">
+                    <h1>
+                        Get your chances of being hired <b>boosted.</b> Spend less time getting <b>noticed.</b>
+                    </h1>
+                    
+                    <a href="{{ url_for('users.upload_cv') }}" id="about">
+                        Upload a CV
+                    </a>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <div class="wrapper">
+            <div class="feature-container">
+                <h1>How does it work?</h1>
+                <div class="features">
+                    <div class="feature-entry">
+                        <div class="icon">
+                            <img class="feature-icon" src="/static/images/workflow.svg"></img>
+                        </div>
+                        <div class="feature-description">
+                            <h2>Workflow</h2>
+                            <p>Upload your CV -> the system uses tokenization and anonymizes it -> other users check anonymous CVs and decide whether to give you the employment reference.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-entry" style="order: 1; margin-top: 40px; height: 100px;">
+                        <div class="icon">
+                            <img class="feature-icon" src="/static/images/upload.svg"></img>
+                        </div>
+                        <div class="feature-description" style="height: 100px;">
+                            <h2>Upload a CV right away</h2>
+                            <p>Just quickly sign up if you want to have your CV anonymized or check basic features. Simple as that.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-entry" style="order: 2; margin-top: 40px; height: 92px;">
+                        <div class="icon">
+                            <img class="feature-icon" src="/static/images/magnifying-lens.svg"></img>
+                        </div>
+                        <div class="feature-description" style="height: 92px;">
+                            <h2>Track a CV</h2>
+                            <p>After upload, you can see your CV in the database and check/update/delete it.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-entry" style="order: 3; margin-top: 40px; height: 118px;">
+                        <div class="icon">
+                            <img class="feature-icon" src="/static/images/mask.svg"></img>
+                        </div>
+                        <div class="feature-description" style="height: 118px;">
+                            <h2>Is it really anonymous?</h2>
+                            <p>Yes, others only see anonymized versions of CVs so they are not biased against someone. CVs won’t contain photos, personal info (gender, etc).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mac-with-cv">
+                <img src="/static/images/macbook-with-resumes-cropped.png"></img>
+            </div>
+        </div>
+    </div>
+        
+
+    <div class="about-author">
+        <div class="sect-title">
+            <h2 id="contact">About the author & Contacts</h2>
+        </div>
+        <div class="photo-n-text">
+            <div class="my-photo">
+                <img src="/static/images/me-200px.png"></img>
+            </div>
+                
+            <div class="text-icons">
+                <p class="by">by Taras Shmilyk</p>
+                <p class="desc">This project is made as a part of Bachelor’s thesis in Artificial Intelligence. For any questions you may reach out directly to me:  </p>
+                <div class="soc-icons">
+                    <a href="https://www.linkedin.com/in/taras-shmilyk-7b438b164/" target="_blank"><img src="/static/images/linkedin-ico.png" alt=""></a>
+                    <a href="mailto:taras.shmilyk@gmail.com" target="_blank"><img src="/static/images/email-ico.png" alt=""></a>
+                    <a href="https://www.shmilyk-ph.com/" target="_blank"><img src="/static/images/portfolio-ico.png" alt=""></a>
+                    <a href="https://github.com/shm-tar/" target="_blank"><img src="/static/images/github-ico.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="cta">
+        <div class="cta-content">
+            <div class="cta-title">
+                <h2>Get started with CV Reviewer today.</h2>
+            </div>
+            <div class="cta-sign">
+                <a href="{{ url_for('users.signup') }}">Sign up for a free account -></a>
+            </div>
+            <div class="cta-pic">
+                <img src="/static/images/cta-entity.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {% include "info_flash.html" %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <script src="/static/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/flash_disappear.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.nav-container {
+    position: absolute;
+    width: 1440px;
+    height: 72px;
+    left: calc(50% - 1440px/2);
+    top: 0px;
+}
+
+.main-logo {
+    position: absolute;
+    width: 185px;
+    height: 28px;
+    left: calc(50% - 185px/2 - 0.5px);
+    top: 22px;
+}

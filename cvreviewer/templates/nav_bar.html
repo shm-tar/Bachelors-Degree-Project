@@ -1,0 +1,34 @@
+<div class="nav-container">
+    <div class="wrapper">
+        <nav>
+            <ul class="nav-items">
+                <li>
+                    <a href="{{ url_for('home.index') }}#about">About</a>
+                </li>
+
+                <li>
+                    <p>•</p>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('users.upload_cv') }}">Upload</a>
+                </li>
+            </ul>
+
+            <div class="main-logo">
+                <a href="{{ url_for('home.index') }}">
+                    <img class="header-logo" src="/static/images/cv-logo-w-text.svg" alt="">
+                </a>
+            </div>
+
+            <div class="log-sign-btns">
+                <a class="log-in-outln" href="{{ url_for('users.login') }}">
+                    Log in
+                </a>
+                <a class="sign-up-fill" href="{{ url_for('users.signup') }}">
+                    Sign up
+                </a>
+            </div>
+        </nav>
+    </div>
+</div>

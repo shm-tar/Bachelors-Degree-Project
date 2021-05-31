@@ -1,0 +1,155 @@
+body {
+    overflow-y: hidden;
+}
+
+.new-post-btn {
+    position: absolute;
+    width: 196px;
+    height: 62px;
+
+    left: calc(50% - 196px/2 - 452px);
+    top: 162px;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    padding-top: 16px;
+
+    color: #000000;
+
+    margin-top: 10px;
+}
+
+.posts-module {
+    position: absolute;
+    width: 870px;
+    height: 100%;
+    left: calc(50% - 870px/2 + 115px);
+    top: 162px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    /* Make div scrollable when content exceeds div's size */
+    overflow-y: auto;
+}
+
+.cv-post-container {
+    width: 870px;
+    height: 200px;
+    
+    background: #FFFFFF;
+    border-radius: 16px;
+
+    margin: 10px 0px;
+}
+
+.date-posted {
+    position: relative;
+    width: 628px;
+    height: 20px;
+    left: 20px;
+    top: 20px;
+
+    color: rgba(0, 0, 0, 0.25);
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.delimiter {
+    position: relative;
+    width: 830px;
+
+    left: 20px;
+    top: 24px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.title-and-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: relative;
+    width: 682px;
+    height: 126px;
+    left: 20px;
+    top: 32px;
+}
+
+.title {
+    position: static;
+    width: 682px;
+    height: 32px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    
+    color: #000000;
+    
+    order: 0;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.content {
+    position: static;
+    width: 682px;
+    height: 82px;
+
+    overflow: hidden;
+    /* 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    word-wrap: break-word; 
+    */
+
+    white-space: pre-wrap;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+
+    color: #000000;
+
+    order: 1;
+}
+
+.read-more {
+    position: relative;
+    width: 114px;
+    height: 20px;
+    left: 720px;
+    top: 10px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+
+    color: #000000;
+    
+    text-align: center;
+    text-decoration: none;
+}

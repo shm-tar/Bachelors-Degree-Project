@@ -1,0 +1,57 @@
+/* Flask success flash */
+.success-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+
+    position: fixed;
+    width: 168px;
+    height: 53px;
+    left: calc(50% - 168px/2);
+    top: calc(50% - 53px/2 + 315.5px);
+
+    background: linear-gradient(-45deg, #48ff00, #00ff6a, #24e7a6);;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+    border-radius: 16px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.msg-ico {
+    position: static;
+    width: 32px;
+    height: 32px;
+
+    margin-right: 10px;
+    order: 0;
+}
+
+.success-msg {
+    position: static;
+    width: 106px;
+    height: 33px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    order: 1;
+}
